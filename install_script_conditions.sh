@@ -20,7 +20,8 @@ if [ $? -ne 0 ]
         echo "Installing mySQL...FAILURE"
         exit 1
     else
-        echo "Installing mySQL....SUCCESS"   
+        echo "Installing mySQL....SUCCESS"  
+    fi 
 else
     echo "MySQL server is already INSTALLED"
 fi
