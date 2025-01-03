@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USER_ID=$(id -u)
+USER_ID=$(id)
 
-if [ USER_ID -ne 0 ]
+if [ $USER_ID -ne 0 ]
  then
  echo "This is not roor user"
  exit 1
