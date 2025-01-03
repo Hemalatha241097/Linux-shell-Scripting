@@ -2,14 +2,30 @@
 
 #installation of mysql and git by cheching whether they are already installed or not. Also check the installation is successful or not
 
-echo "Installing sql server..."
-
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]
     then
-    echo "You should use root to install sql server"
+    echo "ERROR : You must have root access to install this script"
     exit 1
-else
-    dnf install mysql-server -y
 fi
+
+dnf list installed mysql
+
+if [ $? -ne 0 ]
+    then
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+        then 
+        echo "Installing mySQL...FAILURE"
+        exit 1
+    else
+        echo "Installing mySQL....SUCCESS"   
+else
+    echo "MySQL server is already INSTALLED"
+fi
+
+
+
+
+
