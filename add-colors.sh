@@ -2,6 +2,11 @@
 
 #installation of mysql and git by cheching whether they are already installed or not. Also check the installation is successful or not
 
+R=\e[31m
+G=\e[32m
+Y=\e[33m
+N=\e[0m
+
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]
@@ -13,10 +18,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0]
         then
-            echo "$2...FAILURE"
+            echo "$2...$R FAILURE $N"
             exit 1
         else
-             echo "$2...SUCCESS"
+             echo "$2...$G SUCCESS $N"
     fi
 }
 
