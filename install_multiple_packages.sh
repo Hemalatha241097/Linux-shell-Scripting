@@ -10,15 +10,21 @@ LOG_FILE=$(echo $0 |  cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
-USER_ID=$(id -u)
+CHECK_ROOT(){
 
-if [ $USER_ID -ne 0 ]
+    USER_ID=$(id -u)
+
+    if [ $USER_ID -ne 0 ]
     then
-    echo "ERROR : You must have root access to install this script"
-    exit 1
-fi
+        echo "ERROR : You must have root access to install this script"
+        exit 1
+    fi
+}
+
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+CHECK_ROOT
 
 VALIDATE(){
     if [ $1 -ne 0 ]
