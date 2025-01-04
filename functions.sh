@@ -39,5 +39,5 @@ if [ $? -ne 0 ]
     dnf install gitt -y
     VALIDATE $? "Installing Git"
 else
-    echo "Git is already installed.."
+    echo "Git is already INSTALLED"
 fi
