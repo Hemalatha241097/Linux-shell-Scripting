@@ -9,7 +9,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 |  cut -d "." -f1)
-TIMESTAMP=$(date +%Y-%M-%D-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 USER_ID=$(id -u)
