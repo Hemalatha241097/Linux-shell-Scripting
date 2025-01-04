@@ -2,10 +2,10 @@
 
 #installation of mysql and git by cheching whether they are already installed or not. Also check the installation is successful or not
 
-R=\e[31m
-G=\e[32m
-Y=\e[33m
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 USER_ID=$(id -u)
 
